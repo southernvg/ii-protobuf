@@ -100,25 +100,214 @@ func (m *HealthResponse) GetVersion() string {
 	return ""
 }
 
+type StackFinderSiteRequest struct {
+	Url                  string   `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	IncludeUnknown       bool     `protobuf:"varint,2,opt,name=includeUnknown,proto3" json:"includeUnknown,omitempty"`
+	ScreenShot           bool     `protobuf:"varint,3,opt,name=screenShot,proto3" json:"screenShot,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *StackFinderSiteRequest) Reset()         { *m = StackFinderSiteRequest{} }
+func (m *StackFinderSiteRequest) String() string { return proto.CompactTextString(m) }
+func (*StackFinderSiteRequest) ProtoMessage()    {}
+func (*StackFinderSiteRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_3b833ff3c53c1a5e, []int{2}
+}
+
+func (m *StackFinderSiteRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_StackFinderSiteRequest.Unmarshal(m, b)
+}
+func (m *StackFinderSiteRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_StackFinderSiteRequest.Marshal(b, m, deterministic)
+}
+func (m *StackFinderSiteRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StackFinderSiteRequest.Merge(m, src)
+}
+func (m *StackFinderSiteRequest) XXX_Size() int {
+	return xxx_messageInfo_StackFinderSiteRequest.Size(m)
+}
+func (m *StackFinderSiteRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_StackFinderSiteRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StackFinderSiteRequest proto.InternalMessageInfo
+
+func (m *StackFinderSiteRequest) GetUrl() string {
+	if m != nil {
+		return m.Url
+	}
+	return ""
+}
+
+func (m *StackFinderSiteRequest) GetIncludeUnknown() bool {
+	if m != nil {
+		return m.IncludeUnknown
+	}
+	return false
+}
+
+func (m *StackFinderSiteRequest) GetScreenShot() bool {
+	if m != nil {
+		return m.ScreenShot
+	}
+	return false
+}
+
+type StackFinderResponse struct {
+	Count                int32                       `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	Items                []*StackFinderResponse_Item `protobuf:"bytes,2,rep,name=items,proto3" json:"items,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
+	XXX_unrecognized     []byte                      `json:"-"`
+	XXX_sizecache        int32                       `json:"-"`
+}
+
+func (m *StackFinderResponse) Reset()         { *m = StackFinderResponse{} }
+func (m *StackFinderResponse) String() string { return proto.CompactTextString(m) }
+func (*StackFinderResponse) ProtoMessage()    {}
+func (*StackFinderResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_3b833ff3c53c1a5e, []int{3}
+}
+
+func (m *StackFinderResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_StackFinderResponse.Unmarshal(m, b)
+}
+func (m *StackFinderResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_StackFinderResponse.Marshal(b, m, deterministic)
+}
+func (m *StackFinderResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StackFinderResponse.Merge(m, src)
+}
+func (m *StackFinderResponse) XXX_Size() int {
+	return xxx_messageInfo_StackFinderResponse.Size(m)
+}
+func (m *StackFinderResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_StackFinderResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StackFinderResponse proto.InternalMessageInfo
+
+func (m *StackFinderResponse) GetCount() int32 {
+	if m != nil {
+		return m.Count
+	}
+	return 0
+}
+
+func (m *StackFinderResponse) GetItems() []*StackFinderResponse_Item {
+	if m != nil {
+		return m.Items
+	}
+	return nil
+}
+
+type StackFinderResponse_Item struct {
+	ItemId               int32    `protobuf:"varint,1,opt,name=itemId,proto3" json:"itemId,omitempty"`
+	ItemName             string   `protobuf:"bytes,2,opt,name=itemName,proto3" json:"itemName,omitempty"`
+	InitiatorItemId      int32    `protobuf:"varint,3,opt,name=initiatorItemId,proto3" json:"initiatorItemId,omitempty"`
+	InitiatorItemName    string   `protobuf:"bytes,4,opt,name=initiatorItemName,proto3" json:"initiatorItemName,omitempty"`
+	Category             []string `protobuf:"bytes,5,rep,name=category,proto3" json:"category,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *StackFinderResponse_Item) Reset()         { *m = StackFinderResponse_Item{} }
+func (m *StackFinderResponse_Item) String() string { return proto.CompactTextString(m) }
+func (*StackFinderResponse_Item) ProtoMessage()    {}
+func (*StackFinderResponse_Item) Descriptor() ([]byte, []int) {
+	return fileDescriptor_3b833ff3c53c1a5e, []int{3, 0}
+}
+
+func (m *StackFinderResponse_Item) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_StackFinderResponse_Item.Unmarshal(m, b)
+}
+func (m *StackFinderResponse_Item) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_StackFinderResponse_Item.Marshal(b, m, deterministic)
+}
+func (m *StackFinderResponse_Item) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StackFinderResponse_Item.Merge(m, src)
+}
+func (m *StackFinderResponse_Item) XXX_Size() int {
+	return xxx_messageInfo_StackFinderResponse_Item.Size(m)
+}
+func (m *StackFinderResponse_Item) XXX_DiscardUnknown() {
+	xxx_messageInfo_StackFinderResponse_Item.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StackFinderResponse_Item proto.InternalMessageInfo
+
+func (m *StackFinderResponse_Item) GetItemId() int32 {
+	if m != nil {
+		return m.ItemId
+	}
+	return 0
+}
+
+func (m *StackFinderResponse_Item) GetItemName() string {
+	if m != nil {
+		return m.ItemName
+	}
+	return ""
+}
+
+func (m *StackFinderResponse_Item) GetInitiatorItemId() int32 {
+	if m != nil {
+		return m.InitiatorItemId
+	}
+	return 0
+}
+
+func (m *StackFinderResponse_Item) GetInitiatorItemName() string {
+	if m != nil {
+		return m.InitiatorItemName
+	}
+	return ""
+}
+
+func (m *StackFinderResponse_Item) GetCategory() []string {
+	if m != nil {
+		return m.Category
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*HealthRequest)(nil), "stackfinder_service.HealthRequest")
 	proto.RegisterType((*HealthResponse)(nil), "stackfinder_service.HealthResponse")
+	proto.RegisterType((*StackFinderSiteRequest)(nil), "stackfinder_service.StackFinderSiteRequest")
+	proto.RegisterType((*StackFinderResponse)(nil), "stackfinder_service.StackFinderResponse")
+	proto.RegisterType((*StackFinderResponse_Item)(nil), "stackfinder_service.StackFinderResponse.Item")
 }
 
 func init() { proto.RegisterFile("stackfinder.proto", fileDescriptor_3b833ff3c53c1a5e) }
 
 var fileDescriptor_3b833ff3c53c1a5e = []byte{
-	// 156 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x2c, 0x2e, 0x49, 0x4c,
-	0xce, 0x4e, 0xcb, 0xcc, 0x4b, 0x49, 0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x12, 0x46,
-	0x12, 0x8a, 0x2f, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c, 0x4e, 0x55, 0xe2, 0xe7, 0xe2, 0xf5, 0x48, 0x4d,
-	0xcc, 0x29, 0xc9, 0x08, 0x4a, 0x2d, 0x2c, 0x4d, 0x2d, 0x2e, 0x51, 0x72, 0xe2, 0xe2, 0x83, 0x09,
-	0x14, 0x17, 0xe4, 0xe7, 0x15, 0xa7, 0x0a, 0x89, 0x71, 0xb1, 0x15, 0x97, 0x24, 0x96, 0x94, 0x16,
-	0x4b, 0x30, 0x2a, 0x30, 0x6a, 0x70, 0x06, 0x41, 0x79, 0x42, 0x12, 0x5c, 0xec, 0x65, 0xa9, 0x45,
-	0xc5, 0x99, 0xf9, 0x79, 0x12, 0x4c, 0x60, 0x09, 0x18, 0xd7, 0x28, 0x81, 0x8b, 0x3b, 0x18, 0x64,
-	0x97, 0x1b, 0xd8, 0x2e, 0xa1, 0x40, 0x2e, 0x36, 0x88, 0x91, 0x42, 0x4a, 0x7a, 0x58, 0xdc, 0xa0,
-	0x87, 0xe2, 0x00, 0x29, 0x65, 0xbc, 0x6a, 0x20, 0x6e, 0x4a, 0x62, 0x03, 0x7b, 0xc9, 0x18, 0x10,
-	0x00, 0x00, 0xff, 0xff, 0xe0, 0xa2, 0xca, 0x45, 0xe7, 0x00, 0x00, 0x00,
+	// 359 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x52, 0xd1, 0x4e, 0xea, 0x40,
+	0x10, 0x4d, 0x29, 0xe5, 0x72, 0x87, 0x5c, 0xb8, 0x2c, 0x86, 0x34, 0x7d, 0x30, 0xa4, 0x26, 0xa6,
+	0x89, 0xda, 0x07, 0xfc, 0x03, 0x4d, 0x8c, 0xbc, 0x98, 0x58, 0xe2, 0xb3, 0xa9, 0x65, 0x94, 0x0d,
+	0xb0, 0x8b, 0xbb, 0x53, 0x8c, 0x9f, 0xe3, 0x0f, 0xf8, 0x21, 0x7e, 0x95, 0xd9, 0x6d, 0x21, 0x05,
+	0x89, 0xfa, 0xb6, 0xe7, 0xcc, 0xcc, 0x39, 0xed, 0x99, 0x81, 0xae, 0xa6, 0x34, 0x9b, 0x3d, 0x72,
+	0x31, 0x41, 0x15, 0x2f, 0x95, 0x24, 0xc9, 0x7a, 0x15, 0xea, 0x5e, 0xa3, 0x5a, 0xf1, 0x0c, 0xc3,
+	0x0e, 0xfc, 0xbb, 0xc6, 0x74, 0x4e, 0xd3, 0x04, 0x9f, 0x73, 0xd4, 0x14, 0x5e, 0x40, 0x7b, 0x4d,
+	0xe8, 0xa5, 0x14, 0x1a, 0x59, 0x1f, 0x1a, 0x9a, 0x52, 0xca, 0xb5, 0xef, 0x0c, 0x9c, 0xe8, 0x6f,
+	0x52, 0x22, 0xe6, 0xc3, 0x9f, 0x15, 0x2a, 0xcd, 0xa5, 0xf0, 0x6b, 0xb6, 0xb0, 0x86, 0xa1, 0x82,
+	0xfe, 0xd8, 0x78, 0x5d, 0x59, 0xaf, 0x31, 0x27, 0x2c, 0xd5, 0xd9, 0x7f, 0x70, 0x73, 0x35, 0x2f,
+	0x85, 0xcc, 0x93, 0x1d, 0x43, 0x9b, 0x8b, 0x6c, 0x9e, 0x4f, 0xf0, 0x4e, 0xcc, 0x84, 0x7c, 0x29,
+	0xc4, 0x9a, 0xc9, 0x0e, 0xcb, 0x0e, 0x01, 0x74, 0xa6, 0x10, 0xc5, 0x78, 0x2a, 0xc9, 0x77, 0x6d,
+	0x4f, 0x85, 0x09, 0xdf, 0x6a, 0xd0, 0xab, 0x98, 0x6e, 0xbe, 0xfe, 0x00, 0xbc, 0x4c, 0xe6, 0x82,
+	0xac, 0xa7, 0x97, 0x14, 0x80, 0x5d, 0x82, 0xc7, 0x09, 0x17, 0xda, 0xaf, 0x0d, 0xdc, 0xa8, 0x35,
+	0x3c, 0x8b, 0xf7, 0x64, 0x13, 0xef, 0x91, 0x8b, 0x47, 0x84, 0x8b, 0xa4, 0x98, 0x0d, 0xde, 0x1d,
+	0xa8, 0x1b, 0x6c, 0x12, 0x32, 0xcc, 0x68, 0x52, 0x9a, 0x94, 0x88, 0x05, 0xd0, 0x34, 0xaf, 0x9b,
+	0x74, 0x81, 0x65, 0x44, 0x1b, 0xcc, 0x22, 0xe8, 0x70, 0xc1, 0x89, 0xa7, 0x24, 0xd5, 0xa8, 0x18,
+	0x76, 0xed, 0xf0, 0x2e, 0xcd, 0x4e, 0xa1, 0xbb, 0x45, 0x59, 0xb9, 0xba, 0x95, 0xfb, 0x5a, 0x30,
+	0x9e, 0x59, 0x4a, 0xf8, 0x24, 0xd5, 0xab, 0xef, 0x0d, 0x5c, 0xe3, 0xb9, 0xc6, 0xc3, 0x0f, 0x07,
+	0x5a, 0x95, 0x9f, 0x62, 0xb7, 0xd0, 0x28, 0x76, 0xcd, 0xc2, 0xbd, 0x01, 0x6c, 0x5d, 0x46, 0x70,
+	0xf4, 0x6d, 0x4f, 0x19, 0xf7, 0x14, 0x3a, 0x3b, 0xab, 0x67, 0x27, 0x3f, 0x85, 0x5b, 0x39, 0x90,
+	0x20, 0xfa, 0xed, 0x26, 0x1e, 0x1a, 0xf6, 0xaa, 0xcf, 0x3f, 0x03, 0x00, 0x00, 0xff, 0xff, 0x67,
+	0x5f, 0x6f, 0x2e, 0xea, 0x02, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -134,6 +323,7 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type StackFinderClient interface {
 	Health(ctx context.Context, in *HealthRequest, opts ...grpc.CallOption) (*HealthResponse, error)
+	StackFinderSite(ctx context.Context, in *StackFinderSiteRequest, opts ...grpc.CallOption) (*StackFinderResponse, error)
 }
 
 type stackFinderClient struct {
@@ -153,9 +343,19 @@ func (c *stackFinderClient) Health(ctx context.Context, in *HealthRequest, opts 
 	return out, nil
 }
 
+func (c *stackFinderClient) StackFinderSite(ctx context.Context, in *StackFinderSiteRequest, opts ...grpc.CallOption) (*StackFinderResponse, error) {
+	out := new(StackFinderResponse)
+	err := c.cc.Invoke(ctx, "/stackfinder_service.StackFinder/StackFinderSite", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // StackFinderServer is the server API for StackFinder service.
 type StackFinderServer interface {
 	Health(context.Context, *HealthRequest) (*HealthResponse, error)
+	StackFinderSite(context.Context, *StackFinderSiteRequest) (*StackFinderResponse, error)
 }
 
 func RegisterStackFinderServer(s *grpc.Server, srv StackFinderServer) {
@@ -180,6 +380,24 @@ func _StackFinder_Health_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _StackFinder_StackFinderSite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StackFinderSiteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(StackFinderServer).StackFinderSite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/stackfinder_service.StackFinder/StackFinderSite",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(StackFinderServer).StackFinderSite(ctx, req.(*StackFinderSiteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _StackFinder_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "stackfinder_service.StackFinder",
 	HandlerType: (*StackFinderServer)(nil),
@@ -187,6 +405,10 @@ var _StackFinder_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Health",
 			Handler:    _StackFinder_Health_Handler,
+		},
+		{
+			MethodName: "StackFinderSite",
+			Handler:    _StackFinder_StackFinderSite_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
