@@ -8,11 +8,12 @@ service StackFinder {
 }
 
 message HealthRequest {
-    string text = 1;
+
 }
 
 message HealthResponse {
-    string text = 1;
+    string status = 1;
+    string version = 2;
 }
 
 //message StackFinderSiteRequest {
