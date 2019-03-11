@@ -1,0 +1,41 @@
+syntax = "proto3";
+package stackfinder_service;
+
+service StackFinder {
+    rpc Ping(PingRequest) returns (PingResponse);
+    rpc StackFinderSite(StackFinderSiteRequest) returns (StackFinderResponse);
+//    rpc StackFinderCode(StackFinderCodeRequest) returns (StackFinderResponse);
+}
+
+message PingRequest {
+    string text = 1;
+}
+
+message PingResponse {
+    string text = 1;
+}
+
+
+message StackFinderSiteRequest {
+    string url = 1;
+    bool includeUnknown = 2;
+}
+//
+//message StackFinderCodeRequest {
+//    string code = 1;
+//    bool includeUnknown = 2;
+//}
+
+message StackFinderResponse {
+    int32 count = 1;
+
+    message Item {
+        int32 itemId = 1;
+        string itemName = 2;
+        int32 initiatorItemId = 3;
+        string initiatorItemName = 4;
+        repeated string category = 5;
+    }
+
+    repeated Item items = 2;
+}
