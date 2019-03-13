@@ -11,15 +11,20 @@ message HealthRequest {
 
 }
 
+message Category {
+    int32 Id = 1;
+    string Name = 2;
+}
+
 message HealthResponse {
-    string status = 1;
-    string version = 2;
+    string Status = 1;
+    string Version = 2;
 }
 
 message StackFinderSiteRequest {
-    string url = 1;
-    bool includeUnknown = 2;
-    bool screenShot = 3;
+    string Url = 1;
+    bool IncludeUnknown = 2;
+    bool ScreenShot = 3;
 }
 //
 //message StackFinderCodeRequest {
@@ -28,14 +33,15 @@ message StackFinderSiteRequest {
 //}
 
 message StackFinderResponse {
-    int32 count = 1;
+    int32 Count = 1;
 
     message Item {
-        int32 itemId = 1;
-        string itemName = 2;
-        int32 initiatorItemId = 3;
-        string initiatorItemName = 4;
-        repeated string category = 5;
+        int32 ItemId = 1;
+        string ItemName = 2;
+        repeated Category ItemCategory = 3;
+        int32 InitiatorItemId = 4;
+        string InitiatorItemName = 5;
+        repeated Category InitiatorCategory = 6;
     }
 
     repeated Item items = 2;
