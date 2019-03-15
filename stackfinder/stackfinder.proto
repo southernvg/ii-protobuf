@@ -1,7 +1,7 @@
 syntax = "proto3";
 package stackfinder_service;
 
-service StackFinder {
+service SF {
     rpc Health(HealthRequest) returns (HealthResponse);
     rpc StackFinderSite(StackFinderSiteRequest) returns (StackFinderResponse);
     rpc StackFinderHTML(StackFinderHTMLRequest) returns (StackFinderResponse);
