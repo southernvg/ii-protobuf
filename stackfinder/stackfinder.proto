@@ -3,8 +3,8 @@ package stackfinder_service;
 
 service SF {
     rpc Health(HealthRequest) returns (HealthResponse);
-    rpc StackFinderSite(StackFinderSiteRequest) returns (StackFinderResponse);
-    rpc StackFinderHTML(StackFinderHTMLRequest) returns (StackFinderResponse);
+ //   rpc StackFinderSite(StackFinderSiteRequest) returns (StackFinderResponse);
+ //   rpc StackFinderHTML(StackFinderHTMLRequest) returns (StackFinderResponse);
 }
 
 message HealthRequest {
@@ -22,6 +22,7 @@ message HealthResponse {
     int32 ChromeProcesses = 3;
 }
 
+/*
 message StackFinderSiteRequest {
     string Url = 1;
     bool IncludeUnknown = 2;
@@ -52,3 +53,4 @@ message StackFinderResponse {
     repeated Item items = 2;
     bytes Screenshot = 3;
 }
+*/
