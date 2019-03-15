@@ -7,7 +7,9 @@ service SF {
     rpc StackFinderHTML(StackFinderHTMLRequest) returns (StackFinderResponse);
 }
 
-message HealthRequest {}
+message HealthRequest {
+
+}
 
 message Category {
     int32 Id = 1;
