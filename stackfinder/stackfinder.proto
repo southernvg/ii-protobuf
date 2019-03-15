@@ -27,7 +27,7 @@ message StackFinderSiteRequest {
 }
 
 message StackFinderHTMLRequest {
-    string Code = 1;
+    string HTML = 1;
     int64 Width = 2;
     int64 Height = 3;
     bool IncludeUnknown = 4;
