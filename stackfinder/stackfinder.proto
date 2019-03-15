@@ -47,5 +47,5 @@ message StackFinderResponse {
     }
 
     repeated Item items = 2;
-    bytes screenshot = 3;
+    bytes Screenshot = 3;
 }
