@@ -3,8 +3,8 @@ package stackfinder_service;
 
 service StackFinder {
     rpc Health(HealthRequest) returns (HealthResponse);
-    rpc StackFinderSite(StackFinderSiteRequest) returns (StackFinderSiteResponse);
-    rpc StackFinderCode(StackFinderCodeRequest) returns (StackFinderCodeResponse);
+    rpc StackFinderSite(StackFinderSiteRequest) returns (StackFinderResponse);
+    rpc StackFinderHTML(StackFinderHTMLRequest) returns (StackFinderResponse);
 }
 
 message HealthRequest {}
@@ -26,7 +26,7 @@ message StackFinderSiteRequest {
     bool ScreenShot = 3;
 }
 
-message StackFinderCodeRequest {
+message StackFinderHTMLRequest {
     string Code = 1;
     int64 Width = 2;
     int64 Height = 3;
@@ -34,24 +34,7 @@ message StackFinderCodeRequest {
     bool ScreenShot = 5;
 }
 
-message StackFinderSiteResponse {
-    int32 Count = 1;
-
-    message Item {
-        int32 ItemId = 1;
-        string ItemName = 2;
-        string Url = 3;
-        repeated Category ItemCategory = 4;
-        int32 InitiatorItemId = 5;
-        string InitiatorItemName = 6;
-        repeated Category InitiatorCategory = 7;
-    }
-
-    repeated Item items = 2;
-    bytes Screenshot = 3;
-}
-
-message StackFinderCodeResponse {
+message StackFinderResponse {
     int32 Count = 1;
 
     message Item {
