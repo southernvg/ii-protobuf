@@ -4,12 +4,10 @@ package stackfinder_service;
 service StackFinder {
     rpc Health(HealthRequest) returns (HealthResponse);
     rpc StackFinderSite(StackFinderSiteRequest) returns (StackFinderResponse);
-//    rpc StackFinderCode(StackFinderCodeRequest) returns (StackFinderResponse);
+    rpc StackFinderCode(StackFinderCodeRequest) returns (StackFinderResponse);
 }
 
-message HealthRequest {
-
-}
+message HealthRequest {}
 
 message Category {
     int32 Id = 1;
@@ -27,11 +25,12 @@ message StackFinderSiteRequest {
     bool IncludeUnknown = 2;
     bool ScreenShot = 3;
 }
-//
-//message StackFinderCodeRequest {
-//    string code = 1;
-//    bool includeUnknown = 2;
-//}
+
+message StackFinderCodeRequest {
+    string code = 1;
+    bool includeUnknown = 2;
+    bool ScreenShot = 3;
+}
 
 message StackFinderResponse {
     int32 Count = 1;
