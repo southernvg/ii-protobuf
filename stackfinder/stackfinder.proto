@@ -21,19 +21,19 @@ message HealthResponse {
 
 message StackFinderPageRequest {
     string Url = 1;
-    int64 Width = 2;
-    int64 Height = 3;
-    bool IncludeUnknown = 4;
-    bool ScreenShot = 5;
+    bool IncludeUnknown = 2;
+    bool ScreenShot = 3;
+    int64 ScreenShotHeight = 4;
+    int64 ScreenShotWidth = 5;
     bool HeaderBidInfo = 6;
 }
 
 message StackFinderHTMLRequest {
     string HTML = 1;
-    int64 Width = 2;
-    int64 Height = 3;
-    bool IncludeUnknown = 4;
-    bool ScreenShot = 5;
+    bool IncludeUnknown = 2;
+    bool ScreenShot = 3;
+    int64 ScreenShotWidth = 4;
+    int64 ScreenShotHeight = 5;
 }
 
 message StackFinderResponse {
