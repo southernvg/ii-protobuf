@@ -50,6 +50,6 @@ message StackFinderResponse {
 
     repeated Item items = 2;
     bytes BidResponses = 3;
-    bytes WinBids = 4;
+    bytes WinningBids = 4;
     bytes Screenshot = 5;
 }
