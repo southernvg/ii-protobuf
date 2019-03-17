@@ -42,10 +42,11 @@ message StackFinderResponse {
         int32 ItemId = 1;
         string ItemName = 2;
         string Url = 3;
-        repeated Category ItemCategory = 4;
-        int32 InitiatorItemId = 5;
-        string InitiatorItemName = 6;
-        repeated Category InitiatorCategory = 7;
+        string Type = 4;
+        repeated Category ItemCategory = 5;
+        int32 InitiatorItemId = 6;
+        string InitiatorItemName = 7;
+        repeated Category InitiatorCategory = 8;
     }
 
     repeated Item items = 2;
