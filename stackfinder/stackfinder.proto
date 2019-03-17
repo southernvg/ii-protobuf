@@ -17,14 +17,15 @@ message Category {
 message HealthResponse {
     string Status = 1;
     string Version = 2;
-    int32 ChromeProcesses = 3;
 }
 
 message StackFinderPageRequest {
     string Url = 1;
-    bool IncludeUnknown = 2;
-    bool ScreenShot = 3;
-    bool HeaderBidInfo = 4;
+    int64 Width = 2;
+    int64 Height = 3;
+    bool IncludeUnknown = 4;
+    bool ScreenShot = 5;
+    bool HeaderBidInfo = 6;
 }
 
 message StackFinderHTMLRequest {
