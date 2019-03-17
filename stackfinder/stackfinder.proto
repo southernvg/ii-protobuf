@@ -26,6 +26,8 @@ message StackFinderPageRequest {
     int64 ScreenShotHeight = 4;
     int64 ScreenShotWidth = 5;
     bool HeaderBidInfo = 6;
+    bool SaveSession = 7;
+    string SessionId = 8;
 }
 
 message StackFinderHTMLRequest {
@@ -54,4 +56,6 @@ message StackFinderResponse {
     bytes BidResponses = 3;
     bytes WinningBids = 4;
     bytes Screenshot = 5;
+    string SessionId = 6;
+
 }
