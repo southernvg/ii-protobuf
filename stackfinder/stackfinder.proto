@@ -57,5 +57,4 @@ message StackFinderResponse {
     bytes WinningBids = 4;
     bytes Screenshot = 5;
     string SessionId = 6;
-
 }
