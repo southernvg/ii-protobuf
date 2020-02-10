@@ -1,5 +1,5 @@
 # Make file for Protobuf
-PROTOC=$(HOME)/bin/protoc
+PROTOC=/usr/local/bin/protoc
 
 all: build
 build:

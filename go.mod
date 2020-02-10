@@ -1,4 +1,4 @@
-module bitbucket.org/industryindexdev/ii-protobuf
+module github.com/southernvg/ii-protobuf
 
 go 1.11
 
